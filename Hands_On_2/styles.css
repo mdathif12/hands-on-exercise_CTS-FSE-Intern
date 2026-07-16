@@ -1,0 +1,161 @@
+/* Mobile First Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2c3e50;
+    padding: 20px;
+}
+
+.logo {
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    padding: 30px;
+    background: #3498db;
+    color: white;
+}
+
+.hero button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Stats Bar */
+
+.stats-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.stat {
+    flex: 1;
+    background: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Main Section */
+
+main {
+    padding: 20px;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.course-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 180px;
+    align-self: stretch;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Tablet View */
+
+@media (min-width: 768px) {
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .stats-bar {
+        flex-direction: row;
+        
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop View */
+
+@media (min-width: 1024px) {
+
+    .hero {
+        padding: 80px;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Auto Responsive Grid */
+
+.course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
